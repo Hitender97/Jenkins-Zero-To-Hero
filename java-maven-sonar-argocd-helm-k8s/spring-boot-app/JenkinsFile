@@ -69,6 +69,7 @@ pipeline {
                     ls -ltrh
                     git status
                     //cd java-maven-sonar-argocd-helm-k8s
+                    git config --global --add safe.directory /var/lib/jenkins/workspace/cicdDemo
                     git config user.email "pahujahitender@gmail.com"
                     git config user.name "Hitender97"
                     BUILD_NUMBER=${BUILD_NUMBER}
