@@ -64,7 +64,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                    it config --global --add safe.directory $(pwd)
+                    git config --global --add safe.directory $(pwd)
                     echo "==== git Dir ===="
                     pwd
                     ls -ltrh
