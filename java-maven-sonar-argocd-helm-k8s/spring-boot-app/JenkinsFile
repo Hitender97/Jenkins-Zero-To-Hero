@@ -5,10 +5,14 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
+  tools {
+    jdk 'myjdk17' // Name must match what you set in Global Tool Configuration
+    maven 'maven-3.8.4' // optional, if you’ve configured Maven in Jenkins too
+  }
   environment {
         JAVA_HOME = '/usr/lib/jvm/java-17-amazon-corretto.x86_64'
         PATH = "$JAVA_HOME/bin:$PATH"
-    }
+  }
   stages {
     stage('Checkout') {
       steps {
