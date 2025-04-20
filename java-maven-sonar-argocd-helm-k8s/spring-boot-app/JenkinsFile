@@ -65,6 +65,8 @@ pipeline {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh 'pwd'
                 sh '''
+                    cd java-maven-sonar-argocd-helm-k8s
+                    pwd
                     git config user.email "pahujahitender@gmail.com"
                     git config user.name "Hitender97"
                     BUILD_NUMBER=${BUILD_NUMBER}
